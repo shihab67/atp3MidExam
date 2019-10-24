@@ -18,13 +18,17 @@ router.post('/', function(request, response){
 
 	userModel.validate(user, function(status){
 		if(status){
-			if(status == 1){
+			if(status.type == 1){
 			response.cookie('username', request.body.username);
-			response.redirect('/home');
+			request.session.username = request.body.username;
+			request.session.type = 1;
+			response.render('home/index', {user: request.session.username, type: request.session.type});
 			}
-			if(status == 2){
+			if(status.type == 2){
 				response.cookie('username', request.body.username);
-				response.redirect('/employeeHome');
+				request.session.username = request.body.username;
+				request.session.type = 2;
+				response.render('employee/index', {user: request.session.username, type: request.session.type});
 			}
 		}else{
 			response.send('invalid username/password');		

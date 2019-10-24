@@ -4,7 +4,7 @@ module.exports = {
 
 	getById: function(id, callback){
 
-			var sql = "select * from login where id=?";
+			var sql = "select * from users where id=?";
 			db.getResults(sql, [id], function(result){
 				if(result.length > 0 ){
 					callback(result[0]);
@@ -18,12 +18,7 @@ module.exports = {
 		db.getResults(sql, [user.username, user.password], function(result){
 
 			if(result.length > 0){
-				if(result[0].type == 1){
-					callback(1);
-				}
-				if((result[0].type == 2)){
-					callback(2);
-				}
+				callback(result[0]);
 			}else{
 				callback(false);
 			}
