@@ -17,20 +17,23 @@ router.post('/', function(request, response){
 	};
 
 	userModel.validate(user, function(status){
-		if(status){
+		request.session.username = request.body.username;
+		request.session.name = status.id;
+		console.log(request.session.name);
 			if(status.type == 1){
 			response.cookie('username', request.body.username);
-			request.session.username = request.body.username;
-			request.session.type = 1;
-			response.render('home/index', {user: request.session.username, type: request.session.type});
+			//request.session.username = request.body.username;
+			//request.session.id = status.id;
+			response.render('home/index', {user: request.session.username, id: request.session.id});
 			}
 			if(status.type == 2){
 				response.cookie('username', request.body.username);
-				request.session.username = request.body.username;
-				request.session.type = 2;
-				response.render('employee/index', {user: request.session.username, type: request.session.type});
+				//request.session.username = request.body.username;
+				//request.session.id = status.id;
+			
+				response.render('employee/index', {user: request.session.username, id: request.session.id});
 			}
-		}else{
+		else{
 			response.send('invalid username/password');		
 		}
 	});
