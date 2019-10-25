@@ -3,29 +3,52 @@
 <head>
 	<title>Login page</title>
 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style>
+		body{
+			margin: 40px;
+			padding: 110px;
+			box-sizing: border-box;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			color: wheat;
+		}
+		table{
+			position: absolute;
+			top: 20%;
+			left: 35%;
+		}
+		.form-control{
+			width: 500px;
+		}
+		td{
+			text-align: center;
+		}
+	</style>
 </head>
 <body>
 
 <fieldset>
 	<form method="post" >
+		<div class="wrapper">
 	<table style="">
 		<tr>
-			<td><legend style="text-align: center;">Login</legend></td>
+			<th colspan="2" style="text-align: center;"><h2>Login</h2></th>
 		</tr>
 		<tr>
-			<td>Username:</td>
-			<td><input type="text" name="username"></td>
+			<td><input type="text" name="username" placeholder="Username" class="form-control"></td>
 		</tr>
 		<tr>
-			<td>Password:</td>
-			<td><input type="password" name="password"></td>
+			<td><input type="password" name="password" placeholder="Password" class="form-control"></td>
 		</tr>
 		<tr> 
-			<td><input type="submit" name="submit" value="Login"></td>
-			<td><a href="/registration">Registration</a></td>
+			<td colspan='2'>
+				<input type="submit" name="submit" value="Login" class="btn btn-primary">
+				<a href="/registration">Registration</a>
+			</td>
+			<td></td>
 			<td></td>
 		</tr>
 	</table>
+</div>
 	</form>
 </fieldset>
 </body>

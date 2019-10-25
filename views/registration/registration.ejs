@@ -1,39 +1,58 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Registration page</title>
-    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<title>Registration page</title>
+	<link rel="stylesheet" type="text/css"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style>
+		body {
+			margin: 40px;
+			padding: 80px;
+			box-sizing: border-box;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			color: wheat;
+		}
+
+		.form-control {
+			width: 500px;
+		}
+	</style>
 </head>
+
 <body>
 	<h1 style="text-align: center;">Registration</h1>
 	<form method="post">
-	<table align="center">
-		<tr>
-			<td>Customer Name</td>
-			<td><input type="text" name="empName" required></td>
-		</tr>
-		<tr>
-			<td>Company Name</td>
-			<td><input type="text" name="compName" required></td>
-		</tr>
-		<tr>
-			<td>Contact No.</td>
-			<td><input type="number" name="contact" required></td>
-		</tr>
-		<tr>
-			<td>User Name</td>
-			<td><input type="text" name="username" required></td>
-		</tr>
-		<tr>
-			<td>Password</td>
-			<td><input type="password" name="password" required></td>
-		</tr>
-		<tr colspan="2">
-			<td colspan="2" align="center"><input type="submit" name="submit" value="Register" class="btn btn-primary"></td>
-			<td></td>
-		</tr>
-	</table>
-</form>
+		<div class="container">
+			<table align="center">
+				<tr>
+					<td><input class="form-control" type="text" name="empName" placeholder="Customer Name" required>
+					</td>
+				</tr>
+				<tr>
+					<td><input class="form-control" type="text" name="compName" placeholder="Company Name" required>
+					</td>
+				</tr>
+				<tr>
+					<td><input class="form-control" type="number" name="contact" placeholder="Contact No." required>
+					</td>
+				</tr>
+				<tr>
+					<td><input class="form-control" type="text" name="username" placeholder="User Name" required></td>
+				</tr>
+				<tr>
+					<td><input class="form-control" type="password" name="password" placeholder="Password" required>
+					</td>
+				</tr>
+				<tr colspan="2">
+					<td colspan="2" align="center"><input type="submit" name="submit" value="Register"
+							class="btn btn-primary"></td>
+					<td></td>
+				</tr>
+			</table>
+			<div>
+	</form>
 
 </body>
+
 </html>
